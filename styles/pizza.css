@@ -18,10 +18,15 @@ legend {
     color: darkgreen;
     font-variant: small-caps;
     font-size: 125%;
-    width: 10%;
+    width: 20%;
 }
 
 .jumbotron {
     background-color: darkgreen;
     color: white;
+}
+
+.err {
+    color: darkred;
+    visibility: hidden;
 }
