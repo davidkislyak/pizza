@@ -9,7 +9,7 @@
 <h2>Order Summary:</h2>
 <pre>
     <?php
-    print_r($_POST);
+    var_dump($_POST);
     ?>
 </pre>
 </body>
