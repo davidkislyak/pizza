@@ -28,7 +28,7 @@
 
     <img src="images/pizza-boi-small.png" alt="Pizza Guy" class="float-sm-right">
 
-    <form id="pizza-form" action="confirmation.html">
+    <form id="pizza-form" action="confirmation.php" method="post">
         <fieldset class="form-group">
             <legend>Contact Info</legend>
             <div class="form-group">
@@ -41,16 +41,11 @@
                 <input type="text" class="form-control" id="lastName">
                 <span class="err" id="err-lname"> Please enter a last name</span>
             </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <textarea class="form-control" id="address" rows="3"></textarea>
-<!--                <span class="err" id="err-address"> Please enter an address</span>-->
-            </div>
         </fieldset>
         <fieldset class="form-group">
             <legend>Pickup or Delivery</legend>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="method" id="pickup" value="pickup" checked>
+                <input class="form-check-input" type="radio" name="method" id="pickup" value="pickup">
                 <label class="form-check-label" for="pickup">
                     Pickup
                 </label>
@@ -60,6 +55,12 @@
                 <label class="form-check-label" for="delivery">
                     Delivery
                 </label>
+            </div>
+            <span class="err" id="err-method"> Please select pickup or delivery</span>
+            <div class="form-group" id="address-block">
+                <label for="address">Address</label>
+                <textarea class="form-control" id="address" rows="3"></textarea>
+                <span class="err" id="err-address"> Please enter an address</span>
             </div>
         </fieldset>
 
@@ -116,5 +117,18 @@
 
 <!-- JavaScript Files -->
 <script src="scripts/pizza.js"></script>
+
+<!-- jQuery Function-->
+<script>
+    // Show address when delivery is selected
+    $("#delivery").on("click", function() {
+        $("#address-block").css("display", "block");
+    });
+
+    // Hide address when pickup is selected
+    $("#pickup").on("click", function() {
+        $("#address-block").css("display", "none");
+    });
+</script>
 </body>
 </html>
